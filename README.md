@@ -1,9 +1,9 @@
 # RegexRacket
-## Javascript
-Operadores
+# Javascript
+## Operadores
 
 
-Operadores de Comparacion 
+## Operadores de Comparacion 
 
 ## Comentarios 
 // Single Line
