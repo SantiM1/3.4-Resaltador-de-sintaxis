@@ -1,5 +1,7 @@
 #lang racket
-;Santiago Minga Test-Regex
+;Santiago Minga
+;Daniel Loredo
+;Test-Regex
 
 ;JSReader
 (define (JSreader infile outfile)
