@@ -6,7 +6,7 @@
 ## Operadores de Comparacion 
 
 ## Comentarios 
-// Single Line
+// Single Line \n
 /* Mult Line */
 
 
