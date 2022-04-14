@@ -26,4 +26,13 @@
   (list))
 ;identify
 (define (identify ch)
-  (list))
+  (list)
+  (if (equal?(regexp-match #rx "=|+|*|..." ch) #f))
+          var
+          (if (operador ch)
+          op
+          (slice ch (regexp-match-positions #rx "=|+|*|..." ch))
+          
+
+
+

@@ -1,0 +1,20 @@
+//Este es un caso de prueba
+
+
+
+
+/*
+const    x = 2
+var y = 7
+let z = x + y
+*/
+
+
+let e = 7 + 8
+const e = (9 * 7)
+var e= jiji //Comentario
+// Esta es una variable
+/*Comentario 
+multilinea */
+
+
