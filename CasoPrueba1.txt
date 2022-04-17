@@ -1,6 +1,6 @@
 //Este es un caso de prueba
 
-
+let 4 = 5
 
 
 /*
@@ -10,9 +10,9 @@ let z = x + y
 */
 
 
-let e = 7 + 8
-const e = (9 * 7)
-var e= jiji //Comentario
+let e = 790920.698 + -8
+const e = 9 * 7
+var e= float"jiji" //Comentario
 // Esta es una variable
 /*Comentario 
 multilinea */
