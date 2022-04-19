@@ -137,10 +137,10 @@
   (list(append(regexp-match #rx"-?[1234567890]*[\\.e]?-?[1234567890]*" file) (list "Red"))))
 ;is_del
 (define (is_del file)
-  (not(equal?(regexp-match #rx"if |for|else " (peek-string 3 0 file)) #f)))
+  (not(equal?(regexp-match #rx"if |for" (peek-string 3 0 file)) #f)))
 ;delimitarores
 (define (delimitadores file)
-  (list(append(regexp-match #rx"if |for|else " file) (list "DarkRed"))))
+  (list(append(regexp-match #rx"if |for" file) (list "DarkRed"))))
 ;is_func
 (define (is_func file)
   (not(equal?(regexp-match #rx"function " (peek-string 9 0 file)) #f)))
@@ -149,8 +149,8 @@
   (list(append(regexp-match #rx"function " file) (list "Orange"))))
 
 
-;Execute
-(JSreader "CasoPrueba4.txt" "Resultado10.html")
+;Execut5
+(JSreader "CasoPrueba4.txt" "Resultado4.html")
 
           
           
