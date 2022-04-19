@@ -12,9 +12,7 @@ let z = x + y
 
 let e = 790920.698 + -8
 const e = 9 * 7
-var e= float"jiji" //Comentario
+var e = float "jiji" //Comentario
 // Esta es una variable
 /*Comentario 
 multilinea */
-
-

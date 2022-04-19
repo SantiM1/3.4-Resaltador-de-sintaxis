@@ -1,0 +1,27 @@
+// Este programa no hace nada en específico
+
+function imprimeHola() {
+  const myString = "HOLA" 
+  return myString; 
+} 
+
+
+const lista = [0, 1, 0, 1, 0, 1];
+
+for ( int i = 0; i < 6; i++ ) {
+  // Si es 1 imprime hola, si no, regresa un 0
+
+  if ( i % 2 == 0 ) {
+     imprimeHola(); 
+  }
+
+  if ( i % 2 == 1 ) {
+     return 0;
+  }
+} 
+
+/* 
+Esto es un 
+comentario
+multilínea
+*/
