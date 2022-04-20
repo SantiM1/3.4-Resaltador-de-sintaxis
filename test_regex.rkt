@@ -150,7 +150,7 @@
 
 
 ;Execut5
-(JSreader "CasoPrueba4.txt" "Resultado4.html")
+(JSreader "CasoPrueba2.txt" "Resultado2.html")
 
           
           

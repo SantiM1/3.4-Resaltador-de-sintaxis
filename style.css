@@ -26,6 +26,7 @@ html {
 
 .Green {
   color: green;
+  white-space: pre-line;
 }
 
 .White {
