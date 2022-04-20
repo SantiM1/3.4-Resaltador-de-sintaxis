@@ -128,7 +128,7 @@
   (not(equal?(regexp-match #rx"\"" (peek-string 2 0 file)) #f)))
 ;strings
 (define (strings file)
-  (list(append(regexp-match #rx"\".*\"" file) (list "LightGreen"))))
+  (list(append(regexp-match #rx"\".*?\"" file) (list "LightGreen"))))
 ;is_num
 (define (is_num file)
   (not(equal?(regexp-match #rx"-?[1234567890]" (peek-string 2 0 file)) #f)))
