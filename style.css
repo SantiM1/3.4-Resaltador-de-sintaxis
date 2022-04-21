@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+}
+
+.container {
+  font-size: 2rem;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 700;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: rgb(1, 7, 25);
+}
+
+.Green {
+  color: green;
+  white-space: pre-line;
+}
+
+.White {
+  color: white;
+}
+
+.LightBlue {
+  color: blue;
+}
+
+.Blue {
+  color: rgb(0, 0, 99);
+}
+
+.LightGreen {
+  color: rgb(87, 255, 95);
+}
+
+.Red {
+  color: red;
+}
+
+.DarkRed {
+  color: rgb(112, 0, 0);
+}
+
+.Orange {
+  color: orange;
+}
+
+.Purple {
+  color: purple;
+}

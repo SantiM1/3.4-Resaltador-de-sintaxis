@@ -1,18 +1,23 @@
 #lang racket
-;Santiago Minga
-;Daniel Loredo
+;Santiago Minga A00830698
+;Daniel Loredo A01284184
 ;Test-Regex
 
+;How to run
+;(JSreader "CasoPrueba#.txt" "NombreArchivo.html") (# -> 1-4)
+
 ;JSReader
-(define (JSreader infile ) ;outfile
+(define (JSreader infile outfile) ;outfile
   (define in(open-input-file infile))
-  ;(define out(open-output-file outfile))
+  (define out(open-output-file outfile))
   (define lst(read_file in))
   (write lst)
   (display lst)
-  ;(html_print lst out)
-  (close-input-port in))
-  ;(close-output-port out))
+  (html_print lst out)
+  (close-input-port in)
+  (close-output-port out)
+)
+
 ;read
 (define (read_file file)
   (if (eof-object? (peek-char file))
@@ -49,8 +54,47 @@
                                       (append(list(append(regexp-match  #rx".*? " file) (list "Purple"))) (read_file file))))))))))))))
 
 ;html_print
+;(define (html_print lst out)
+; (list))
 (define (html_print lst out)
-  (list))
+  (display "<!DOCTYPE html>
+            <html lang='en'>
+              <head>
+                <meta charset='UTF-8' />
+                <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+                <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+                <link href='style.css' rel='stylesheet' type='text/css' />
+                <title>Document</title>
+                <link rel='preconnect' href='https://fonts.googleapis.com'>
+                <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+                <link href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Teko:wght@300;400;500;600&display=swap' rel='stylesheet'>
+              </head>
+              <body class='container'>" out)
+
+  ;this method puts everything in a <span> tag with the corresponding "class" name
+  (html_helper lst out)
+  
+  (display "</body></html>" out)
+)
+
+
+(define (html_helper lst out)
+  
+  (define (html_display lst out)
+    (if (pair? lst)
+     (display (~a "<span class=" (second lst) ">" (first lst) "</span>" ) out)
+        
+     (if (char=? lst #\newline)
+         (display "<br>" out)
+         (display "&nbsp;" out)
+     )
+     ) 1)
+  
+    (if (empty? lst)
+        0
+        (+ (html_display (car lst) out) (html_helper (cdr lst) out)))
+)
+
 
 ;is_comentario_mult
 (define (is_comentario_mult file)
@@ -69,7 +113,7 @@
   (not(equal?(regexp-match #rx"=|!|\\+|\\*|/|-|%|>|<|\\(|\\)|\\[|\\]|{|}|;|,"  (peek-string 1 0 file)) #f)))
 ;operator
 (define (operador file)
-  (list(append(regexp-match #rx"===|==|=|!=|!==|\\+=|\\+|\\*=|\\*|\\*{2}=|\\*{2}|/=|/|-=|-|%=|%|>=|>|<=|<|\\(|\\)|\\[|\\]|{|}|;|," file) (list "Black"))))
+  (list(append(regexp-match #rx"===|==|=|!=|!==|\\+=|\\+|\\*=|\\*|\\*{2}=|\\*{2}|/=|/|-=|-|%=|%|>=|>|<=|<|\\(|\\)|\\[|\\]|{|}|;|," file) (list "White"))))
 ;is_identificador
 (define (is_identificador file)
   (not(equal?(regexp-match #rx"var |const |let " (peek-string 6 0 file)) #f)))
@@ -87,13 +131,13 @@
   (not(equal?(regexp-match #rx"\"" (peek-string 2 0 file)) #f)))
 ;strings
 (define (strings file)
-  (list(append(regexp-match #rx"\".*\"" file) (list "LightGreen"))))
+  (list(append(regexp-match #rx"\".*?\"" file) (list "LightGreen"))))
 ;is_num
 (define (is_num file)
-  (not(equal?(regexp-match #rx"-?[1234567890]" (peek-string 2 0 file)) #f)))
+  (not(equal?(regexp-match #rx"[1234567890]" (peek-string 1 0 file)) #f)))
 ;numeros
 (define (numeros file)
-  (list(append(regexp-match #rx"-?[1234567890]*[\\.e]?-?[1234567890]*" file) (list "Red"))))
+  (list(append(regexp-match #rx"[1234567890]*[\\.e]?-?[1234567890]*" file) (list "Red"))))
 ;is_del
 (define (is_del file)
   (not(equal?(regexp-match #rx"if |for" (peek-string 3 0 file)) #f)))
@@ -107,8 +151,10 @@
 (define (funciones file)
   (list(append(regexp-match #rx"function " file) (list "Orange"))))
 
+
 ;Execute
-(JSreader "CasoPrueba1.txt")
+(JSreader "CasoPrueba4.txt" "Resultado4.html")
+
 
           
           

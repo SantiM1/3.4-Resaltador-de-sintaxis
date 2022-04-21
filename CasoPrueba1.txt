@@ -1,6 +1,8 @@
 //Este es un caso de prueba
 
-let list1 = [ 52, 3, 4, 5];
+
+let A4 = float 5
+
 
 
 /*
@@ -9,16 +11,10 @@ var y = 7
 let z = (x + y)
 */
 
-function mifuncion() {
-for (int i = 0; i > 10; i++ ){
-  return i 
- }
-}
-let enter = (790920.698 % 89) + -8
-const UI = 9 * 7
-var nombre = float "jiji" //Comentario
+let e = 790920.698 + -8
+const e = 9 * 7
+var e = "jiji" //Comentario
+
 // Esta es una variable
 /*Comentario 
 multilinea */
-
-
