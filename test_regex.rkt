@@ -1,7 +1,10 @@
 #lang racket
-;Santiago Minga
-;Daniel Loredo
+;Santiago Minga A00830698
+;Daniel Loredo A01284184
 ;Test-Regex
+
+;How to run
+;(JSreader "CasoPrueba#.txt" "NombreArchivo.html") (# -> 1-4)
 
 ;JSReader
 (define (JSreader infile outfile) ;outfile
@@ -149,8 +152,8 @@
   (list(append(regexp-match #rx"function " file) (list "Orange"))))
 
 
-;Execut5
-(JSreader "CasoPrueba2.txt" "Resultado2.html")
+;Execute
+(JSreader "CasoPrueba4.txt" "Resultado4.html")
 
           
           
