@@ -134,10 +134,10 @@
   (list(append(regexp-match #rx"\".*?\"" file) (list "LightGreen"))))
 ;is_num
 (define (is_num file)
-  (not(equal?(regexp-match #rx"-?[1234567890]" (peek-string 2 0 file)) #f)))
+  (not(equal?(regexp-match #rx"[1234567890]" (peek-string 1 0 file)) #f)))
 ;numeros
 (define (numeros file)
-  (list(append(regexp-match #rx"-?[1234567890]*[\\.e]?-?[1234567890]*" file) (list "Red"))))
+  (list(append(regexp-match #rx"[1234567890]*[\\.e]?-?[1234567890]*" file) (list "Red"))))
 ;is_del
 (define (is_del file)
   (not(equal?(regexp-match #rx"if |for" (peek-string 3 0 file)) #f)))

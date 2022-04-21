@@ -1,6 +1,6 @@
 //Este es un caso de prueba
 
-let Abc4 = float 5
+let A4 = float 5
 
 
 /*
